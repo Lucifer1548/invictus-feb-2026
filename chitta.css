@@ -1,0 +1,183 @@
+/* c:\Users\ARNAV VERMA\Pictures\hack\dtu\chitta.css */
+/* Minimal layout for Chitta specific elements */
+
+.chitta-main {
+    padding-bottom: 40px;
+}
+
+.chitta-dashboard-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .chitta-dashboard-split {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chitta-panel {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 10px;
+}
+
+.panel-index {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.mood-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mood-selector p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .mood-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mood-btn {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 12px;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mood-btn:hover, .mood-btn.selected {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.mood-btn.vata.selected { border-color: var(--dosha-vata); color: var(--dosha-vata); }
+.mood-btn.pitta.selected { border-color: var(--dosha-pitta); color: var(--dosha-pitta); }
+.mood-btn.kapha.selected { border-color: var(--dosha-kapha); color: var(--dosha-kapha); }
+.mood-btn.sattva.selected { border-color: #fce205; color: #fce205; } /* Yellowish for Sattva */
+
+.mood-note {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.mood-note:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+}
+
+.save-mood-btn {
+    align-self: flex-start;
+}
+
+.mood-history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mood-history-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mood-history-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.mood-history-list .time {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+}
+
+.mood-history-list .mood {
+    font-weight: 500;
+}
+
+.mood-history-list .mood.pitta { color: var(--dosha-pitta); }
+.mood-history-list .mood.vata { color: var(--dosha-vata); }
+.mood-history-list .mood.sattva { color: #fce205; }
+.mood-history-list .mood.kapha { color: var(--dosha-kapha); }
+
+.mood-history-list .note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.burnout-chart-expanded {
+    margin-bottom: 30px;
+    width: 100%;
+    min-height: 250px;
+}
+
+.risk-breakdown {
+    margin-bottom: 25px;
+}
+
+.risk-breakdown h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.chitta-recommendation {
+    background: rgba(212, 168, 83, 0.05); /* Slight gold tint */
+    border-left: 3px solid var(--accent-gold);
+    padding: 15px;
+}
+
+.chitta-recommendation h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--accent-gold);
+}
+
+.chitta-recommendation p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}

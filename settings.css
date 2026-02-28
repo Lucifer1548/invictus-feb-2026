@@ -1,0 +1,279 @@
+/* c:\Users\ARNAV VERMA\Pictures\hack\dtu\settings.css */
+
+.settings-main {
+    padding-bottom: 40px;
+}
+
+.settings-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .settings-container {
+        flex-direction: column;
+    }
+}
+
+.settings-nav {
+    flex: 0 0 250px;
+}
+
+.settings-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-nav li {
+    padding: 15px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    margin-bottom: 5px;
+}
+
+.settings-nav li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.settings-nav li.active {
+    background: var(--bg-secondary);
+    color: var(--accent-gold);
+    border-left: 3px solid var(--accent-gold);
+}
+
+.settings-content {
+    flex: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 30px;
+    min-height: 400px;
+}
+
+.settings-section {
+    display: none;
+}
+
+.settings-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.settings-section h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group.row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.row .col {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-family: 'Geist Sans', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+}
+
+.help-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* Switches */
+.toggle-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.toggle-group:last-child {
+    border-bottom: none;
+}
+
+.toggle-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.05rem;
+}
+
+.toggle-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--text-muted);
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+    background-color: var(--bg-primary);
+}
+
+input:disabled+.slider {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.ghost-button {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.ghost-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ghost-button.warning {
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.ghost-button.warning:hover {
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.action-row {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.integration-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.integration-card.connected {
+    border-color: rgba(212, 168, 83, 0.3);
+}
+
+.int-icon {
+    font-size: 2rem;
+}
+
+.int-details {
+    flex: 1;
+}
+
+.int-details h3 {
+    margin: 0 0 5px 0;
+}
+
+.int-details p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}

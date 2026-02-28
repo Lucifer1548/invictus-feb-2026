@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Profile & Preferences | KEDAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">KEDAR</span>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d4a853'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='14' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E"
+                        alt="User Avatar">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="chitta.html" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Chitta
+                </a>
+                <a href="dinacharya.html" class="nav-item">
+                    <span class="nav-icon">⏰</span>
+                    Dinacharya
+                </a>
+                <a href="yoga.html" class="nav-item">
+                    <span class="nav-icon">🧘</span>
+                    Yoga
+                </a>
+                <a href="netra.html" class="nav-item">
+                    <span class="nav-icon">👁️</span>
+                    Netra
+                </a>
+                <a href="dharma.html" class="nav-item">
+                    <span class="nav-icon">☯️</span>
+                    Dharma
+                </a>
+                <a href="ayur.html" class="nav-item">
+                    <span class="nav-icon">🌿</span>
+                    Ayur
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-item active">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="burnout-widget">
+                    <div class="burnout-gauge">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#222" stroke-width="4" />
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a853" stroke-width="4"
+                                stroke-dasharray="157" stroke-dashoffset="47" transform="rotate(-90 30 30)" />
+                        </svg>
+                        <div class="burnout-score">72</div>
+                    </div>
+                    <div class="burnout-label">Burnout Risk</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content settings-main">
+            <!-- Header Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Settings</h1>
+                    <span class="page-subtitle">Prakriti & Platform Configuration</span>
+                </div>
+                <div class="header-right">
+                    <div class="live-time" id="liveTime"></div>
+                    <button class="notification-bell">🔔</button>
+                    <div class="profile-menu">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23d4a853'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='12' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E"
+                            alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <section class="settings-container">
+                <!-- Settings Sidebar -->
+                <div class="settings-nav">
+                    <ul>
+                        <li class="active" data-target="profile">User Prakriti (Profile)</li>
+                        <li data-target="notifications">Digital Detox Rules</li>
+                        <li data-target="privacy">Data Privacy</li>
+                        <li data-target="integrations">Device Integrations</li>
+                    </ul>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <div id="profile" class="settings-section active">
+                        <h2>User Prakriti Configuration</h2>
+                        <div class="panel-index">[SET-PRK]</div>
+
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" value="Arnav">
+                            </div>
+                            <div class="col">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" value="Verma">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="primaryDosha">Primary Dosha Imbalance (Vikriti)</label>
+                            <select id="primaryDosha">
+                                <option value="vata" selected>Vata (Air/Ether) - Anxious/Restless</option>
+                                <option value="pitta">Pitta (Fire/Water) - Intense/Irritable</option>
+                                <option value="kapha">Kapha (Earth/Water) - Lethargic/Stagnant</option>
+                            </select>
+                            <p class="help-text">Your dashboard algorithms (Chitta, Dinacharya, Ayur) adapt to this
+                                dominant trait.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="workStyle">Primary Work Persona</label>
+                            <select id="workStyle">
+                                <option value="engineer" selected>Software Engineer / Developer</option>
+                                <option value="designer">Designer / Creative</option>
+                                <option value="manager">Manager / Coordinator</option>
+                                <option value="student">Student / Researcher</option>
+                            </select>
+                        </div>
+
+                        <button class="accent-button save-settings-btn">Save Attributes</button>
+                    </div>
+
+                    <div id="notifications" class="settings-section">
+                        <h2>Digital Detox & Alerts</h2>
+                        <div class="panel-index">[SET-NTF]</div>
+
+                        <div class="toggle-group">
+                            <div class="toggle-info">
+                                <h3>Netra Blink Reminders</h3>
+                                <p>Desktop notifications requesting the 20-20-20 rule.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="toggle-group">
+                            <div class="toggle-info">
+                                <h3>Dinacharya Shift Alerts</h3>
+                                <p>Audio chime when Ayurvedic time periods transition (e.g. Kapha to Pitta).</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="toggle-group">
+                            <div class="toggle-info">
+                                <h3>Burnout Critical Warning</h3>
+                                <p>Interruptive screen-takeover if Chitta score exceeds 85/100.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="privacy" class="settings-section">
+                        <h2>Data Privacy</h2>
+                        <div class="panel-index">[SET-SEC]</div>
+
+                        <div class="toggle-group">
+                            <div class="toggle-info">
+                                <h3>Local processing only</h3>
+                                <p>Process typing patterns and webcam (Netra) strictly on-device. Disables remote
+                                    backup.</p>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="action-row">
+                            <button class="ghost-button warning">Clear My Dharma Memory</button>
+                            <button class="ghost-button warning">Delete All Wellness Data</button>
+                        </div>
+                    </div>
+
+                    <div id="integrations" class="settings-section">
+                        <h2>Device Integrations</h2>
+                        <div class="panel-index">[SET-INT]</div>
+
+                        <div class="integration-card">
+                            <div class="int-icon">🍎</div>
+                            <div class="int-details">
+                                <h3>Apple Health</h3>
+                                <p>Sync sleep duration and heart rate variability.</p>
+                            </div>
+                            <button class="ghost-button">Connect</button>
+                        </div>
+
+                        <div class="integration-card connected">
+                            <div class="int-icon">📅</div>
+                            <div class="int-details">
+                                <h3>Google Calendar</h3>
+                                <p>Used by Chitta to measure cognitive meeting load.</p>
+                            </div>
+                            <button class="ghost-button">Configured</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="settings.js"></script>
+</body>
+
+</html>

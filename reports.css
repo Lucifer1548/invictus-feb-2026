@@ -1,0 +1,57 @@
+/* c:\Users\ARNAV VERMA\Pictures\hack\dtu\reports.css */
+
+.reports-main {
+    padding-bottom: 40px;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.report-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-image-container {
+    background: var(--bg-primary);
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    min-height: 250px;
+    overflow: hidden;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: sepia(0.2) hue-rotate(-15deg) contrast(1.1);
+    /* Subtle treatment to match dark academia aesthetic if images are too bright */
+}
+
+.chart-caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    margin-top: auto;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 10px;
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharma Engine - Ethical Decision Assistant | KEDAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dharma.css">
+</head>
+<body>
+    <!-- Dashboard Layout Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">KEDAR</span>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d4a853'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='14' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E" alt="User Avatar">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="chitta.html" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Chitta
+                </a>
+                <a href="dinacharya.html" class="nav-item">
+                    <span class="nav-icon">⏰</span>
+                    Dinacharya
+                </a>
+                <a href="yoga.html" class="nav-item">
+                    <span class="nav-icon">🧘</span>
+                    Yoga
+                </a>
+                <a href="netra.html" class="nav-item">
+                    <span class="nav-icon">👁️</span>
+                    Netra
+                </a>
+                <a href="dharma.html" class="nav-item active">
+                    <span class="nav-icon">☯️</span>
+                    Dharma
+                </a>
+                <a href="ayur.html" class="nav-item">
+                    <span class="nav-icon">🌿</span>
+                    Ayur
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="burnout-widget">
+                    <div class="burnout-gauge">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#222" stroke-width="4"/>
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a853" stroke-width="4"
+                                    stroke-dasharray="157" stroke-dashoffset="47" 
+                                    transform="rotate(-90 30 30)"/>
+                        </svg>
+                        <div class="burnout-score">72</div>
+                    </div>
+                    <div class="burnout-label">Burnout Risk</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content dharma-main">
+            <!-- Header Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Dharma Engine</h1>
+                    <span class="page-subtitle">Ethical Decision Assistant</span>
+                </div>
+                <div class="header-right">
+                    <div class="live-time" id="liveTime">FRI 27 FEB · 09:41:22</div>
+                    <button class="notification-bell">🔔</button>
+                    <div class="profile-menu">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23d4a853'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='12' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dharma Input Panel -->
+            <section class="dharma-input-section">
+                <div class="input-panel">
+                    <div class="panel-header">
+                        <h2>Describe Your Dilemma</h2>
+                        <div class="panel-index">[DHR-005]</div>
+                    </div>
+                    <div class="dilemma-input-container">
+                        <textarea 
+                            id="dilemmaInput"
+                            class="dilemma-textarea" 
+                            placeholder="I'm facing a difficult decision where I need to choose between my career advancement and staying true to my personal values. The promotion would require compromising on work-life balance and potentially working on projects that don't align with my ethical principles..."
+                            rows="6"
+                        ></textarea>
+                        <div class="input-footer">
+                            <span class="character-count">0 / 500</span>
+                            <button id="seekGuidance" class="accent-button">Seek Guidance →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Response Card (Initially Hidden) -->
+            <section id="responseSection" class="dharma-response-section" style="display: none;">
+                <div class="response-card">
+                    <div class="response-header">
+                        <h3>Ethical Guidance Analysis</h3>
+                        <div class="response-index">[DHR-RESP-001]</div>
+                    </div>
+                    
+                    <!-- Situation Summary -->
+                    <div class="response-section">
+                        <h4>Situation Summary</h4>
+                        <p id="situationSummary" class="response-text">
+                            You are experiencing a conflict between professional ambition and personal integrity, a common challenge in modern career paths.
+                        </p>
+                    </div>
+
+                    <!-- Gita Principle Reference -->
+                    <div class="response-section">
+                        <h4>Gita Principle Reference</h4>
+                        <div class="gita-reference">
+                            <span id="gitaChapter" class="gita-citation">Bhagavad Gita 2.47</span>
+                            <p id="gitaQuote" class="gita-text">
+                                "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Gunas Classification -->
+                    <div class="response-section">
+                        <h4>Gunas Classification</h4>
+                        <div class="gunas-display">
+                            <div class="guna-item">
+                                <div class="guna-label">Sattva</div>
+                                <div class="guna-bar">
+                                    <div class="guna-fill sattva" style="width: 65%;"></div>
+                                </div>
+                                <div class="guna-percentage">65%</div>
+                            </div>
+                            <div class="guna-item">
+                                <div class="guna-label">Rajas</div>
+                                <div class="guna-bar">
+                                    <div class="guna-fill rajas" style="width: 25%;"></div>
+                                </div>
+                                <div class="guna-percentage">25%</div>
+                            </div>
+                            <div class="guna-item">
+                                <div class="guna-label">Tamas</div>
+                                <div class="guna-bar">
+                                    <div class="guna-fill tamas" style="width: 10%;"></div>
+                                </div>
+                                <div class="guna-percentage">10%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ethical Interpretation -->
+                    <div class="response-section">
+                        <h4>Ethical Interpretation</h4>
+                        <p id="ethicalInterpretation" class="response-text">
+                            Your dilemma reflects the eternal tension between Artha (material prosperity) and Dharma (righteous duty). The Gita teaches that true success lies not in external achievements but in performing one's duty with detachment and integrity. Your current path may offer immediate gains but could lead to long-term spiritual dissonance.
+                        </p>
+                    </div>
+
+                    <!-- Practical Advice -->
+                    <div class="response-section">
+                        <h4>Practical Advice</h4>
+                        <ul id="practicalAdvice" class="advice-list">
+                            <li>Evaluate whether the promotion aligns with your core values and long-term purpose</li>
+                            <li>Consider alternative paths that honor both your career goals and ethical principles</li>
+                            <li>Practice detachment from outcomes while performing your current duties diligently</li>
+                            <li>Seek guidance from mentors who embody both professional success and ethical conduct</li>
+                            <li>Remember that sustainable success comes from alignment, not compromise</li>
+                        </ul>
+                    </div>
+
+                    <!-- Reflection Question -->
+                    <div class="response-section reflection-section">
+                        <blockquote id="reflectionQuestion" class="reflection-quote">
+                            "What would you do if success were guaranteed regardless of your choice?"
+                        </blockquote>
+                    </div>
+
+                    <!-- Response Footer -->
+                    <div class="response-footer">
+                        <span class="response-source">Powered by Bhagvad-Gita-LLM</span>
+                        <span class="disclaimer">Explanations are spiritual guidance, not professional advice</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Context Memory Strip -->
+            <section class="context-memory-section">
+                <div class="memory-header">
+                    <h3>Recent Dilemmas</h3>
+                    <div class="memory-index">[DHR-MEM-001]</div>
+                </div>
+                <div class="memory-accordion">
+                    <div class="memory-item">
+                        <div class="memory-toggle" data-memory="1">
+                            <span class="memory-date">FEB 24, 2026</span>
+                            <span class="memory-preview">Work-life balance vs career growth...</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="memory-content" id="memory-1">
+                            <p class="memory-dilemma">Struggling with maintaining work-life balance while pursuing career growth opportunities.</p>
+                            <p class="memory-guidance">Guidance emphasized the importance of sustainable pace and finding harmony between ambition and well-being.</p>
+                        </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-toggle" data-memory="2">
+                            <span class="memory-date">FEB 20, 2026</span>
+                            <span class="memory-preview">Ethical concerns about workplace practices...</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="memory-content" id="memory-2">
+                            <p class="memory-dilemma">Questioning ethical practices in workplace decisions and their impact on stakeholders.</p>
+                            <p class="memory-guidance">Guidance focused on speaking truth with compassion and standing firm in righteous principles.</p>
+                        </div>
+                    </div>
+                    <div class="memory-item">
+                        <div class="memory-toggle" data-memory="3">
+                            <span class="memory-date">FEB 15, 2026</span>
+                            <span class="memory-preview">Personal relationship conflicts with values...</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="memory-content" id="memory-3">
+                            <p class="memory-dilemma">Navigating relationship conflicts that challenge personal values and boundaries.</p>
+                            <p class="memory-guidance">Guidance emphasized clear communication and maintaining self-respect while showing compassion.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions-section">
+                <div class="actions-grid">
+                    <button class="action-card">
+                        <span class="action-icon">📖</span>
+                        <span class="action-title">Study Gita Principles</span>
+                        <span class="action-description">Explore key verses for ethical guidance</span>
+                    </button>
+                    <button class="action-card">
+                        <span class="action-icon">🧘</span>
+                        <span class="action-title">Meditate on Decision</span>
+                        <span class="action-description">Clear your mind before choosing</span>
+                    </button>
+                    <button class="action-card">
+                        <span class="action-icon">📝</span>
+                        <span class="action-title">Journal Reflection</span>
+                        <span class="action-description">Document your thought process</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="dharma.js"></script>
+</body>
+</html>

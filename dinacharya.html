@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinacharya - Daily Routine | KEDAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dinacharya.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">KEDAR</span>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d4a853'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='14' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E"
+                        alt="User Avatar">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="chitta.html" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Chitta
+                </a>
+                <a href="dinacharya.html" class="nav-item active">
+                    <span class="nav-icon">⏰</span>
+                    Dinacharya
+                </a>
+                <a href="yoga.html" class="nav-item">
+                    <span class="nav-icon">🧘</span>
+                    Yoga
+                </a>
+                <a href="netra.html" class="nav-item">
+                    <span class="nav-icon">👁️</span>
+                    Netra
+                </a>
+                <a href="dharma.html" class="nav-item">
+                    <span class="nav-icon">☯️</span>
+                    Dharma
+                </a>
+                <a href="ayur.html" class="nav-item">
+                    <span class="nav-icon">🌿</span>
+                    Ayur
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="burnout-widget">
+                    <div class="burnout-gauge">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#222" stroke-width="4" />
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a853" stroke-width="4"
+                                stroke-dasharray="157" stroke-dashoffset="47" transform="rotate(-90 30 30)" />
+                        </svg>
+                        <div class="burnout-score">72</div>
+                    </div>
+                    <div class="burnout-label">Burnout Risk</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content dinacharya-main">
+            <!-- Header Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Dinacharya</h1>
+                    <span class="page-subtitle">Ayurvedic Biological Clock & Daily Routine</span>
+                </div>
+                <div class="header-right">
+                    <div class="live-time" id="liveTime"></div>
+                    <button class="notification-bell">🔔</button>
+                    <div class="profile-menu">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23d4a853'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='12' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E"
+                            alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <section class="dinacharya-overview">
+                <!-- Circular Dosha Clock Visualization -->
+                <div class="dosha-clock-container">
+                    <div class="clock-ring">
+                        <!-- Clock Segments -->
+                        <div class="segment kapha-am">Kapha (6am-10am)</div>
+                        <div class="segment pitta-am">Pitta (10am-2pm)</div>
+                        <div class="segment vata-pm">Vata (2pm-6pm)</div>
+                        <div class="segment kapha-pm">Kapha (6pm-10pm)</div>
+                        <div class="segment pitta-pm">Pitta (10pm-2am)</div>
+                        <div class="segment vata-am">Vata (2am-6am)</div>
+
+                        <div class="clock-center">
+                            <div class="current-time-display">00:00</div>
+                            <div class="current-dosha-period">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Checklist list -->
+                <div class="schedule-list-card">
+                    <div class="panel-header">
+                        <h2>Today's Sequence</h2>
+                        <div class="panel-index">[DIN-CHK]</div>
+                    </div>
+                    <div class="routine-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%;"></div>
+                        </div>
+                        <span>2 / 8 Completed</span>
+                    </div>
+
+                    <ul class="routine-tasks">
+                        <li class="task-item completed vata">
+                            <label class="task-label">
+                                <input type="checkbox" checked disabled>
+                                <span class="custom-check"></span>
+                                <div class="task-info">
+                                    <span class="time">06:00 - 08:00</span>
+                                    <span class="title">Brahma Muhurta Wake & Hygiene</span>
+                                </div>
+                            </label>
+                            <span class="dosha-tag vata">Vata</span>
+                        </li>
+                        <li class="task-item kapha">
+                            <label class="task-label">
+                                <input type="checkbox">
+                                <span class="custom-check"></span>
+                                <div class="task-info">
+                                    <span class="time">08:00 - 10:00</span>
+                                    <span class="title">Breakfast & Light Work Planning</span>
+                                </div>
+                            </label>
+                            <span class="dosha-tag kapha">Kapha</span>
+                        </li>
+                        <li class="task-item pitta">
+                            <label class="task-label">
+                                <input type="checkbox">
+                                <span class="custom-check"></span>
+                                <div class="task-info">
+                                    <span class="time">10:00 - 14:00</span>
+                                    <span class="title">Deep Work & Strategic Decisions</span>
+                                </div>
+                            </label>
+                            <span class="dosha-tag pitta">Pitta</span>
+                        </li>
+                        <li class="task-item vata">
+                            <label class="task-label">
+                                <input type="checkbox">
+                                <span class="custom-check"></span>
+                                <div class="task-info">
+                                    <span class="time">14:00 - 18:00</span>
+                                    <span class="title">Creative Tasks & Communication</span>
+                                </div>
+                            </label>
+                            <span class="dosha-tag vata">Vata</span>
+                        </li>
+                        <li class="task-item kapha">
+                            <label class="task-label">
+                                <input type="checkbox">
+                                <span class="custom-check"></span>
+                                <div class="task-info">
+                                    <span class="time">18:00 - 20:00</span>
+                                    <span class="title">Light Dinner & Family Time</span>
+                                </div>
+                            </label>
+                            <span class="dosha-tag kapha">Kapha</span>
+                        </li>
+                        <li class="task-item kapha">
+                            <label class="task-label">
+                                <input type="checkbox">
+                                <span class="custom-check"></span>
+                                <div class="task-info">
+                                    <span class="time">20:00 - 22:00</span>
+                                    <span class="title">Digital Sunset & Sleep Prep</span>
+                                </div>
+                            </label>
+                            <span class="dosha-tag kapha">Kapha</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="dinacharya.js"></script>
+</body>
+
+</html>

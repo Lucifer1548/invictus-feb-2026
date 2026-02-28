@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KEDAR - Onboarding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+    <!-- Onboarding Container -->
+    <div class="onboarding-container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+            </div>
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Profile</span>
+                </div>
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Dosha</span>
+                </div>
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Schedule</span>
+                </div>
+                <div class="step" data-step="4">
+                    <span class="step-number">4</span>
+                    <span class="step-label">Permissions</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Onboarding Content -->
+        <div class="onboarding-content">
+            <!-- Step 1: Name + Goals -->
+            <div class="onboarding-step active" id="step1">
+                <div class="step-header">
+                    <h2>Welcome to KEDAR</h2>
+                    <p>Let's personalize your wellness journey</p>
+                    <div class="step-indicator">STEP 1 / 4</div>
+                </div>
+
+                <div class="step-content">
+                    <div class="form-group">
+                        <label for="userName" class="form-label">Your Name</label>
+                        <input type="text" id="userName" class="form-input" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">What brings you to KEDAR?</label>
+                        <div class="goals-grid">
+                            <div class="goal-card" data-goal="stress">
+                                <span class="goal-icon">😰</span>
+                                <span class="goal-text">Reduce Stress</span>
+                            </div>
+                            <div class="goal-card" data-goal="sleep">
+                                <span class="goal-icon">😴</span>
+                                <span class="goal-text">Better Sleep</span>
+                            </div>
+                            <div class="goal-card" data-goal="focus">
+                                <span class="goal-icon">🎯</span>
+                                <span class="goal-text">Improve Focus</span>
+                            </div>
+                            <div class="goal-card" data-goal="posture">
+                                <span class="goal-icon">🧘</span>
+                                <span class="goal-text">Posture Health</span>
+                            </div>
+                            <div class="goal-card" data-goal="energy">
+                                <span class="goal-icon">⚡</span>
+                                <span class="goal-text">Boost Energy</span>
+                            </div>
+                            <div class="goal-card" data-goal="balance">
+                                <span class="goal-icon">☯️</span>
+                                <span class="goal-text">Work-Life Balance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-navigation">
+                    <button class="nav-button secondary" disabled>Back</button>
+                    <button class="nav-button primary" id="step1Next">Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Dosha Quiz -->
+            <div class="onboarding-step" id="step2">
+                <div class="step-header">
+                    <h2>Discover Your Dosha</h2>
+                    <p>Answer these questions to understand your Ayurvedic constitution</p>
+                    <div class="step-indicator">STEP 2 / 4</div>
+                </div>
+
+                <div class="step-content">
+                    <div class="quiz-container">
+                        <div class="question-card active" data-question="1">
+                            <div class="question-number">Question 1 of 10</div>
+                            <div class="question-text">What's your body type like?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Thin, light, find it hard to gain weight</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Medium build, gain muscle easily</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Heavier build, tend to gain weight easily</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="2">
+                            <div class="question-number">Question 2 of 10</div>
+                            <div class="question-text">How's your appetite?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Variable, sometimes irregular</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Strong, can eat large quantities</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Slow, steady, feel satisfied quickly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="3">
+                            <div class="question-number">Question 3 of 10</div>
+                            <div class="question-text">How do you handle stress?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Get anxious, worried, overthink</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Get irritable, frustrated, intense</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Become withdrawn, calm, slow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="4">
+                            <div class="question-number">Question 4 of 10</div>
+                            <div class="question-text">What's your sleep pattern like?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Light, often wake up at night</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Moderate, consistent sleep schedule</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Heavy sleeper, needs more sleep</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="5">
+                            <div class="question-number">Question 5 of 10</div>
+                            <div class="question-text">How's your digestion?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Irregular, sometimes bloated</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Strong, good metabolism</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Slow, feels heavy after eating</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="6">
+                            <div class="question-number">Question 6 of 10</div>
+                            <div class="question-text">What's your energy level throughout the day?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Fluctuates, peaks and valleys</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Consistent, steady energy</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Slow start, builds momentum</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="7">
+                            <div class="question-number">Question 7 of 10</div>
+                            <div class="question-text">How do you react to weather changes?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Sensitive to cold and wind</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Heat intolerant, gets irritated</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Stable, doesn't mind weather</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="8">
+                            <div class="question-number">Question 8 of 10</div>
+                            <div class="question-text">What's your mental nature?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Creative, imaginative, many thoughts</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Analytical, goal-oriented</span>
+                                </div>
+                                <div class="option-card" data-option="kapha">
+                                    <span class="option-text">Calm, steady, grounded</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="9">
+                            <div class="question-number">Question 9 of 10</div>
+                            <div class="question-text">How do you feel in crowds?</div>
+                            <div class="options-grid">
+                                <div class="option-card" data-option="vata">
+                                    <span class="option-text">Anxious, overwhelmed</span>
+                                </div>
+                                <div class="option-card" data-option="pitta">
+                                    <span class="option-text">Confident, take charge</span>
+                                </div>
+                                <div class="option-card data-option="kapha">
+                                    <span class="option-text">Comfortable, relaxed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="question-card" data-question="10">
+                            <div class="question-number">Question 10 of 10</div>
+                            <div class="question-text">What's your ideal routine?</div>
+                            <div class="options-grid">
+                                <div class="option-card data-option="vata">
+                                    <span class="option-text">Flexible, spontaneous, varied</span>
+                                </div>
+                                <div class="option-card data-option="pitta">
+                                    <span class="option-text">Structured, disciplined</span>
+                                </div>
+                                <div class="option-card data-option="kapha">
+                                    <span class="option-text">Gentle, predictable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-progress">
+                        <div class="quiz-progress-bar">
+                            <div class="quiz-progress-fill" id="quizProgress" style="width: 10%;"></div>
+                        </div>
+                        <div class="quiz-progress-text">Question 1 of 10</div>
+                    </div>
+                </div>
+
+                <div class="step-navigation">
+                    <button class="nav-button secondary" id="step2Back">← Back</button>
+                    <button class="nav-button primary" id="step2Next" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Schedule Setup -->
+            <div class="onboarding-step" id="step3">
+                <div class="step-header">
+                    <h2>Set Your Daily Rhythm</h2>
+                    <p>Help us create your personalized Dinacharya schedule</p>
+                    <div class="step-indicator">STEP 3 / 4</div>
+                </div>
+
+                <div class="step-content">
+                    <div class="schedule-grid">
+                        <div class="time-input-card">
+                            <label class="time-label">Wake Time</label>
+                            <input type="time" id="wakeTime" class="time-input" value="06:00">
+                            <span class="time-suggestion">Recommended: 5:30 - 6:30 AM</span>
+                        </div>
+
+                        <div class="time-input-card">
+                            <label class="time-label">Sleep Time</label>
+                            <input type="time" id="sleepTime" class="time-input" value="22:00">
+                            <span class="time-suggestion">Recommended: 9:30 - 10:30 PM</span>
+                        </div>
+
+                        <div class="time-input-card">
+                            <label class="time-label">Work Start</label>
+                            <input type="time" id="workStart" class="time-input" value="09:00">
+                            <span class="time-suggestion">When does your workday begin?</span>
+                        </div>
+
+                        <div class="time-input-card">
+                            <label class="time-label">Work End</label>
+                            <input type="time" id="workEnd" class="time-input" value="17:00">
+                            <span class="time-suggestion">When does your workday end?</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-preferences">
+                        <h3>Daily Preferences</h3>
+                        <div class="preference-cards">
+                            <div class="preference-card">
+                                <label class="toggle-label">
+                                    <input type="checkbox" id="morningMeditation" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="preference-text">Morning Meditation</span>
+                            </div>
+                            <div class="preference-card">
+                                <label class="toggle-label">
+                                    <input type="checkbox" id="yogaBreak" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="preference-text">Yoga Breaks</span>
+                            </div>
+                            <div class="preference-card">
+                                <label class="toggle-label">
+                                    <input type="checkbox" id="eyeExercises" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="preference-text">Eye Exercises</span>
+                            </div>
+                            <div class="preference-card">
+                                <label class="toggle-label">
+                                    <input type="checkbox" id="eveningWindDown" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span class="preference-text">Evening Wind-down</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-navigation">
+                    <button class="nav-button secondary" id="step3Back">← Back</button>
+                    <button class="nav-button primary" id="step3Next">Next →</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Permissions -->
+            <div class="onboarding-step" id="step4">
+                <div class="step-header">
+                    <h2>Enable Your Wellness Features</h2>
+                    <p>Grant permissions to unlock KEDAR's full potential</p>
+                    <div class="step-indicator">STEP 4 / 4</div>
+                </div>
+
+                <div class="step-content">
+                    <div class="permissions-grid">
+                        <div class="permission-card">
+                            <div class="permission-icon">👁️</div>
+                            <div class="permission-content">
+                                <h3>Camera Access</h3>
+                                <p>For Yoga Posture AI and Netra Vision Guard</p>
+                                <ul class="permission-features">
+                                    <li>Real-time pose detection and correction</li>
+                                    <li>Eye strain and posture monitoring</li>
+                                    <li>All processing happens on-device</li>
+                                </ul>
+                            </div>
+                            <label class="permission-toggle">
+                                <input type="checkbox" id="cameraPermission">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="permission-card">
+                            <div class="permission-icon">📅</div>
+                            <div class="permission-content">
+                                <h3>Calendar Access</h3>
+                                <p>To optimize your wellness schedule</p>
+                                <ul class="permission-features">
+                                    <li>Suggest optimal break times</li>
+                                    <li>Respect existing meetings</li>
+                                    <li>Integrate wellness reminders</li>
+                                </ul>
+                            </div>
+                            <label class="permission-toggle">
+                                <input type="checkbox" id="calendarPermission">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="permission-card">
+                            <div class="permission-icon">🔔</div>
+                            <div class="permission-content">
+                                <h3>Notifications</h3>
+                                <p>For timely wellness reminders</p>
+                                <ul class="permission-features">
+                                    <li>Break and exercise reminders</li>
+                                    <li>Posture and eye strain alerts</li>
+                                    <li>Daily wellness insights</li>
+                                </ul>
+                            </div>
+                            <label class="permission-toggle">
+                                <input type="checkbox" id="notificationPermission">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="privacy-notice">
+                        <span class="privacy-icon">🔒</span>
+                        <div class="privacy-content">
+                            <strong>Your Privacy Matters</strong>
+                            <p>All wellness data is processed locally on your device. We never store or share your personal health information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-navigation">
+                    <button class="nav-button secondary" id="step4Back">← Back</button>
+                    <button class="nav-button primary accent" id="completeOnboarding">Complete Setup →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="onboarding-enhanced.js"></script>
+</body>
+</html>

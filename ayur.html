@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayur Assistant - Ayurvedic Wellness Chat | KEDAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="ayur.css">
+</head>
+<body>
+    <!-- Dashboard Layout Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">KEDAR</span>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d4a853'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='14' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E" alt="User Avatar">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="chitta.html" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Chitta
+                </a>
+                <a href="dinacharya.html" class="nav-item">
+                    <span class="nav-icon">⏰</span>
+                    Dinacharya
+                </a>
+                <a href="yoga.html" class="nav-item">
+                    <span class="nav-icon">🧘</span>
+                    Yoga
+                </a>
+                <a href="netra.html" class="nav-item">
+                    <span class="nav-icon">👁️</span>
+                    Netra
+                </a>
+                <a href="dharma.html" class="nav-item">
+                    <span class="nav-icon">☯️</span>
+                    Dharma
+                </a>
+                <a href="ayur.html" class="nav-item active">
+                    <span class="nav-icon">🌿</span>
+                    Ayur
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="burnout-widget">
+                    <div class="burnout-gauge">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#222" stroke-width="4"/>
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a853" stroke-width="4"
+                                    stroke-dasharray="157" stroke-dashoffset="47" 
+                                    transform="rotate(-90 30 30)"/>
+                        </svg>
+                        <div class="burnout-score">72</div>
+                    </div>
+                    <div class="burnout-label">Burnout Risk</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content ayur-main">
+            <!-- Header Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Ayur Assistant</h1>
+                    <span class="page-subtitle">Ayurvedic Wellness Guidance</span>
+                </div>
+                <div class="header-right">
+                    <div class="live-time" id="liveTime">FRI 27 FEB · 09:41:22</div>
+                    <button class="notification-bell">🔔</button>
+                    <div class="profile-menu">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23d4a853'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='12' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Chat Layout -->
+            <div class="chat-layout">
+                <!-- Chat Thread -->
+                <div class="chat-thread">
+                    <div class="chat-header">
+                        <h2>Ayur Assistant</h2>
+                        <div class="chat-status">
+                            <span class="status-dot online"></span>
+                            <span class="status-text">Online • Powered by AyurParam</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Welcome Message -->
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <span class="avatar-icon">🌿</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="sender-name">Ayur Assistant</span>
+                                    <span class="message-time">09:41</span>
+                                </div>
+                                <div class="message-text">
+                                    Namaste! I'm your Ayurvedic wellness companion. I can help you with personalized guidance based on your dosha constitution, daily routines, dietary recommendations, and lifestyle practices.
+                                </div>
+                                <div class="message-tags">
+                                    <span class="tag">[AYR-001]</span>
+                                    <span class="tag">Welcome</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- User Message Example -->
+                        <div class="message user-message">
+                            <div class="message-avatar">
+                                <span class="avatar-icon">👤</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="sender-name">You</span>
+                                    <span class="message-time">09:42</span>
+                                </div>
+                                <div class="message-text">
+                                    I've been feeling very anxious and scattered lately. What can I do to ground myself?
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Response Example -->
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <span class="avatar-icon">🌿</span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <span class="sender-name">Ayur Assistant</span>
+                                    <span class="message-time">09:42</span>
+                                </div>
+                                <div class="message-text">
+                                    Based on your symptoms of anxiety and scattered energy, you're experiencing a Vata imbalance. Here are some grounding practices:
+                                </div>
+                                <div class="message-suggestions">
+                                    <div class="suggestion-item">
+                                        <span class="suggestion-icon">🍵</span>
+                                        <div class="suggestion-content">
+                                            <strong>Warm Ginger Tea</strong>
+                                            <p>Drink 2-3 cups daily with honey and lemon to balance Vata</p>
+                                        </div>
+                                    </div>
+                                    <div class="suggestion-item">
+                                        <span class="suggestion-icon">🧘</span>
+                                        <div class="suggestion-content">
+                                            <strong>Abhyanga (Self-Massage)</strong>
+                                            <p>Warm sesame oil massage before shower, 10-15 minutes daily</p>
+                                        </div>
+                                    </div>
+                                    <div class="suggestion-item">
+                                        <span class="suggestion-icon">🥘</span>
+                                        <div class="suggestion-content">
+                                            <strong>Grounding Foods</strong>
+                                            <p>Warm, cooked meals with root vegetables, grains, and healthy fats</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message-tags">
+                                    <span class="tag">[AYR-002]</span>
+                                    <span class="tag">Vata Balance</span>
+                                    <span class="tag">Grounding</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="chat-input-container">
+                        <div class="input-wrapper">
+                            <textarea 
+                                id="chatInput"
+                                class="chat-input" 
+                                placeholder="Ask me anything about your Ayurvedic wellness..."
+                                rows="1"
+                            ></textarea>
+                            <button id="sendMessage" class="send-button">
+                                <span class="send-icon">→</span>
+                            </button>
+                        </div>
+                        <div class="quick-suggestions">
+                            <button class="suggestion-pill">What's my dosha type?</button>
+                            <button class="suggestion-pill">Morning routine tips</button>
+                            <button class="suggestion-pill">Digestive health</button>
+                            <button class="suggestion-pill">Sleep remedies</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dosha Analysis Panel -->
+                <div class="dosha-panel">
+                    <div class="panel-header">
+                        <h3>Your Dosha Analysis</h3>
+                        <div class="panel-index">[AYR-003]</div>
+                    </div>
+
+                    <!-- Dosha Gauges -->
+                    <div class="dosha-gauges">
+                        <div class="dosha-gauge">
+                            <svg class="gauge-svg" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#222" stroke-width="8"/>
+                                <circle class="gauge-fill vata-gauge" cx="50" cy="50" r="40" fill="none" 
+                                        stroke="#8ab4d4" stroke-width="8"
+                                        stroke-dasharray="251.2" stroke-dashoffset="125.6" 
+                                        transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="gauge-center">
+                                <div class="gauge-value">50%</div>
+                                <div class="gauge-label">Vata</div>
+                            </div>
+                        </div>
+
+                        <div class="dosha-gauge">
+                            <svg class="gauge-svg" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#222" stroke-width="8"/>
+                                <circle class="gauge-fill pitta-gauge" cx="50" cy="50" r="40" fill="none" 
+                                        stroke="#d47a53" stroke-width="8"
+                                        stroke-dasharray="251.2" stroke-dashoffset="175.84" 
+                                        transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="gauge-center">
+                                <div class="gauge-value">30%</div>
+                                <div class="gauge-label">Pitta</div>
+                            </div>
+                        </div>
+
+                        <div class="dosha-gauge">
+                            <svg class="gauge-svg" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#222" stroke-width="8"/>
+                                <circle class="gauge-fill kapha-gauge" cx="50" cy="50" r="40" fill="none" 
+                                        stroke="#7ab87a" stroke-width="8"
+                                        stroke-dasharray="251.2" stroke-dashoffset="200.96" 
+                                        transform="rotate(-90 50 50)"/>
+                            </svg>
+                            <div class="gauge-center">
+                                <div class="gauge-value">20%</div>
+                                <div class="gauge-label">Kapha</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dominant Dosha Display -->
+                    <div class="dominant-dosha">
+                        <div class="dominant-label">Primary Constitution</div>
+                        <div class="dominant-value vata-dominant">Vata Dominant</div>
+                        <div class="dominant-description">
+                            Air + Space elements. Creative, quick-thinking, prone to anxiety when imbalanced.
+                        </div>
+                    </div>
+
+                    <!-- Live Suggestions -->
+                    <div class="suggestions-panel">
+                        <h4>Live Recommendations</h4>
+                        <div class="suggestion-list">
+                            <div class="suggestion-card">
+                                <div class="suggestion-header">
+                                    <span class="suggestion-category">🍽️ Food</span>
+                                    <span class="suggestion-time">Now</span>
+                                </div>
+                                <div class="suggestion-text">
+                                    Warm, nourishing kitchari with ghee and mild spices
+                                </div>
+                            </div>
+                            <div class="suggestion-card">
+                                <div class="suggestion-header">
+                                    <span class="suggestion-category">😴 Sleep</span>
+                                    <span class="suggestion-time">Tonight</span>
+                                </div>
+                                <div class="suggestion-text">
+                                    Warm milk with turmeric and cardamom 30min before bed
+                                </div>
+                            </div>
+                            <div class="suggestion-card">
+                                <div class="suggestion-header">
+                                    <span class="suggestion-category">🧘 Yoga</span>
+                                    <span class="suggestion-time">Today</span>
+                                </div>
+                                <div class="suggestion-text">
+                                    Gentle Hatha flow focusing on grounding poses
+                                </div>
+                            </div>
+                            <div class="suggestion-card">
+                                <div class="suggestion-header">
+                                    <span class="suggestion-category">💊 Lifestyle</span>
+                                    <span class="suggestion-time">Daily</span>
+                                </div>
+                                <div class="suggestion-text">
+                                    Abhyanga with warm sesame oil, 15min morning routine
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div class="disclaimer-banner">
+                        <span class="disclaimer-icon">⚠️</span>
+                        <span class="disclaimer-text">NOT MEDICAL ADVICE</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="ayur.js"></script>
+</body>
+</html>

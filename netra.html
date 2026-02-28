@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netra - Vision Guard AI | KEDAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="netra.css">
+</head>
+<body>
+    <!-- Dashboard Layout Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">KEDAR</span>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d4a853'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='14' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E" alt="User Avatar">
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="chitta.html" class="nav-item">
+                    <span class="nav-icon">🧠</span>
+                    Chitta
+                </a>
+                <a href="dinacharya.html" class="nav-item">
+                    <span class="nav-icon">⏰</span>
+                    Dinacharya
+                </a>
+                <a href="yoga.html" class="nav-item">
+                    <span class="nav-icon">🧘</span>
+                    Yoga
+                </a>
+                <a href="netra.html" class="nav-item active">
+                    <span class="nav-icon">👁️</span>
+                    Netra
+                </a>
+                <a href="dharma.html" class="nav-item">
+                    <span class="nav-icon">☯️</span>
+                    Dharma
+                </a>
+                <a href="ayur.html" class="nav-item">
+                    <span class="nav-icon">🌿</span>
+                    Ayur
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="burnout-widget">
+                    <div class="burnout-gauge">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#222" stroke-width="4"/>
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a853" stroke-width="4"
+                                    stroke-dasharray="157" stroke-dashoffset="47" 
+                                    transform="rotate(-90 30 30)"/>
+                        </svg>
+                        <div class="burnout-score">72</div>
+                    </div>
+                    <div class="burnout-label">Burnout Risk</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content netra-main">
+            <!-- Header Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Netra Vision Guard</h1>
+                    <span class="page-subtitle">Real-time Eye Health & Posture Monitoring</span>
+                </div>
+                <div class="header-right">
+                    <div class="live-time" id="liveTime">FRI 27 FEB · 09:41:22</div>
+                    <button class="notification-bell">🔔</button>
+                    <div class="profile-menu">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23d4a853'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='12' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Status Banner -->
+            <section class="status-banner">
+                <div class="status-content">
+                    <div class="status-indicator">
+                        <span class="status-dot monitoring" id="statusDot"></span>
+                        <span class="status-text" id="statusText">MONITORING</span>
+                    </div>
+                    <div class="status-details">
+                        <span class="status-duration" id="statusDuration">Active for 2h 34m</span>
+                        <span class="status-alerts">3 alerts today</span>
+                    </div>
+                </div>
+                <div class="status-controls">
+                    <button id="toggleMonitoring" class="control-button active">Pause</button>
+                    <button id="resetSession" class="control-button secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- Stats Grid -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-icon">👁️</span>
+                            <span class="stat-index">[NTR-001]</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="blinkRate">12</div>
+                            <div class="stat-label">Blink Rate (bpm)</div>
+                            <div class="stat-status warning">Below optimal</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill warning" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-icon">📏</span>
+                            <span class="stat-index">[NTR-002]</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="faceProximity">45</div>
+                            <div class="stat-label">Face Proximity (cm)</div>
+                            <div class="stat-status good">Optimal</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill good" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-icon">🦴</span>
+                            <span class="stat-index">[NTR-003]</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="neckTilt">15°</div>
+                            <div class="stat-label">Neck Tilt Angle</div>
+                            <div class="stat-status warning">Forward head</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill warning" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-icon">⏱️</span>
+                            <span class="stat-index">[NTR-004]</span>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-value" id="timeSinceBreak">45m</div>
+                            <div class="stat-label">Time Since Last Break</div>
+                            <div class="stat-status alert">Break needed</div>
+                            <div class="stat-bar">
+                                <div class="stat-fill alert" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Panel -->
+            <section class="settings-panel">
+                <div class="panel-header">
+                    <h3>Netra Settings</h3>
+                    <div class="panel-index">[NTR-005]</div>
+                </div>
+                
+                <div class="settings-grid">
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <h4>Monitoring Controls</h4>
+                            <div class="setting-toggle">
+                                <input type="checkbox" id="enableNetra" checked class="toggle-input">
+                                <label for="enableNetra" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="setting-description">Enable real-time vision and posture monitoring</p>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <h4>Blink Rate Threshold</h4>
+                            <div class="setting-value-display">
+                                <span id="blinkThresholdValue">15</span> bpm
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="blinkThreshold" min="10" max="30" value="15" class="setting-slider">
+                        </div>
+                        <p class="setting-description">Alert when blink rate falls below this threshold</p>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <h4>Proximity Threshold</h4>
+                            <div class="setting-value-display">
+                                <span id="proximityThresholdValue">40</span> cm
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="proximityThreshold" min="30" max="60" value="40" class="setting-slider">
+                        </div>
+                        <p class="setting-description">Alert when face is closer than this distance</p>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <h4>Break Interval</h4>
+                            <div class="setting-value-display">
+                                <span id="breakIntervalValue">30</span> min
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="breakInterval" min="15" max="60" value="30" class="setting-slider">
+                        </div>
+                        <p class="setting-description">Remind to take breaks at this interval</p>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <h4>Alert Sound</h4>
+                            <div class="setting-toggle">
+                                <input type="checkbox" id="alertSound" checked class="toggle-input">
+                                <label for="alertSound" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="setting-description">Play sound when alerts are triggered</p>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <h4>Desktop Notifications</h4>
+                            <div class="setting-toggle">
+                                <input type="checkbox" id="desktopNotifications" checked class="toggle-input">
+                                <label for="desktopNotifications" class="toggle-label">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <p class="setting-description">Show system notifications for alerts</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alert History -->
+            <section class="alert-history">
+                <div class="history-header">
+                    <h3>Recent Alerts</h3>
+                    <div class="history-index">[NTR-006]</div>
+                </div>
+                
+                <div class="alert-timeline">
+                    <div class="alert-item alert">
+                        <div class="alert-time">09:35</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Low Blink Rate Detected</div>
+                            <div class="alert-description">Blink rate dropped to 8 bpm. Consider taking eye rest.</div>
+                        </div>
+                        <div class="alert-icon">⚠️</div>
+                    </div>
+                    
+                    <div class="alert-item warning">
+                        <div class="alert-time">09:15</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Forward Head Posture</div>
+                            <div class="alert-description">Neck tilt angle exceeded 20°. Adjust your posture.</div>
+                        </div>
+                        <div class="alert-icon">🦴</div>
+                    </div>
+                    
+                    <div class="alert-item info">
+                        <div class="alert-time">08:45</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Break Reminder</div>
+                            <div class="alert-description">Time for your 20-20-20 eye exercise break.</div>
+                        </div>
+                        <div class="alert-icon">⏱️</div>
+                    </div>
+                    
+                    <div class="alert-item success">
+                        <div class="alert-time">08:30</div>
+                        <div class="alert-content">
+                            <div class="alert-title">Monitoring Started</div>
+                            <div class="alert-description">Netra vision guard activated successfully.</div>
+                        </div>
+                        <div class="alert-icon">✅</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Eye Exercise Recommendations -->
+            <section class="eye-exercises">
+                <div class="exercises-header">
+                    <h3>20-20-20 Eye Exercises</h3>
+                    <div class="exercises-index">[NTR-007]</div>
+                </div>
+                
+                <div class="exercise-grid">
+                    <div class="exercise-card">
+                        <div class="exercise-icon">👀</div>
+                        <div class="exercise-title">Focus Shift</div>
+                        <div class="exercise-description">Look at something 20 feet away for 20 seconds</div>
+                        <button class="exercise-button">Start Exercise</button>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <div class="exercise-icon">↔️</div>
+                        <div class="exercise-title">Eye Movement</div>
+                        <div class="exercise-description">Move eyes side to side, up and down</div>
+                        <button class="exercise-button">Start Exercise</button>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <div class="exercise-icon">🔄</div>
+                        <div class="exercise-title">Eye Circles</div>
+                        <div class="exercise-description">Rotate eyes clockwise and counterclockwise</div>
+                        <button class="exercise-button">Start Exercise</button>
+                    </div>
+                    
+                    <div class="exercise-card">
+                        <div class="exercise-icon">✋</div>
+                        <div class="exercise-title">Palming</div>
+                        <div class="exercise-description">Cup hands over eyes for 30 seconds</div>
+                        <button class="exercise-button">Start Exercise</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="netra.js"></script>
+</body>
+</html>

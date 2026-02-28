@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEDAR - Intelligent Rhythm-Based Holistic Wellness Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Global Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="nav-logo">KEDAR</span>
+        </div>
+        <div class="nav-center">
+            <a href="#modules" class="nav-link">Modules</a>
+            <a href="#ai" class="nav-link">AI</a>
+            <a href="#rhythm" class="nav-link">Rhythm</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+        </div>
+        <div class="nav-right">
+            <span class="live-counter">0 sessions active</span>
+            <button class="ghost-button" onclick="window.location.href='onboarding.html'">Begin →</button>
+        </div>
+    </nav>
+
+    <!-- Landing Page Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="system-label">[SYS-001] KEDAR v1.0</div>
+            <h1 class="hero-headline">
+                Your mind has a rhythm.<br>
+                Are you living by it?
+            </h1>
+            <p class="hero-subhead">
+                KEDAR is an AI-powered holistic operating system — combining Ayurvedic wisdom, behavioral science, and edge AI to protect your energy, guide your decisions, and align your day.
+            </p>
+            <div class="hero-ctas">
+                <button class="ghost-button" onclick="window.location.href='onboarding.html'">Start Free →</button>
+                <button class="text-link-button" onclick="showDemo()">Watch Demo</button>
+            </div>
+            <div class="scroll-cue">↓ scroll</div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="problem-section">
+        <div class="problem-grid">
+            <div class="problem-column">
+                <div class="problem-index">01</div>
+                <h3>Burnout before you see it</h3>
+                <p>Chronic stress accumulates silently. Our AI patterns detect the early warning signs your conscious mind misses.</p>
+            </div>
+            <div class="problem-column">
+                <div class="problem-index">02</div>
+                <h3>Decisions without clarity</h3>
+                <p>Modern life presents endless choices. Ancient wisdom provides the ethical framework we've lost.</p>
+            </div>
+            <div class="problem-column">
+                <div class="problem-index">03</div>
+                <h3>Routines out of rhythm</h3>
+                <p>Your body follows natural cycles. Technology has disconnected us from the circadian wisdom that sustained generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Overview Section -->
+    <section class="modules-section">
+        <div class="section-label">[MODULES]</div>
+        <h2>Five systems. One rhythm.</h2>
+        <div class="modules-grid">
+            <div class="module-card">
+                <div class="module-index">[CHT-001]</div>
+                <h3>Chitta</h3>
+                <p>Burnout State Predictor using ML time-series and behavioral analytics</p>
+                <div class="tag-strip">
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">Time Series</span>
+                    <span class="tag">Behavioral</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <div class="module-index">[DIN-002]</div>
+                <h3>Dinacharya Planner</h3>
+                <p>Personalized Ayurvedic daily schedule synced to circadian rhythms</p>
+                <div class="tag-strip">
+                    <span class="tag">Circadian</span>
+                    <span class="tag">Ayurveda</span>
+                    <span class="tag">Schedule</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <div class="module-index">[YGA-003]</div>
+                <h3>Yoga Posture AI</h3>
+                <p>Real-time skeletal tracking via MediaPipe with on-device processing</p>
+                <div class="tag-strip">
+                    <span class="tag">MediaPipe</span>
+                    <span class="tag">Edge AI</span>
+                    <span class="tag">PoseNet</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <div class="module-index">[NTR-004]</div>
+                <h3>Netra</h3>
+                <p>Vision Guard AI monitoring blink rate, face proximity, and posture</p>
+                <div class="tag-strip">
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Health</span>
+                    <span class="tag">Real-time</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <div class="module-index">[DHR-005]</div>
+                <h3>Dharma Engine</h3>
+                <p>Ethical Decision Assistant powered by Bhagavad Gita LLM</p>
+                <div class="tag-strip">
+                    <span class="tag">Bhagavad Gita LLM</span>
+                    <span class="tag">Ethics</span>
+                    <span class="tag">Dharma</span>
+                </div>
+            </div>
+            <div class="module-card">
+                <div class="module-index">[AYR-006]</div>
+                <h3>Ayur Assistant</h3>
+                <p>Ayurvedic Conversational Assistant powered by AyurParam</p>
+                <div class="tag-strip">
+                    <span class="tag">AyurParam</span>
+                    <span class="tag">Dosha</span>
+                    <span class="tag">Wellness</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sanskrit Philosophy Quote Section -->
+    <section class="philosophy-section">
+        <blockquote class="philosophy-quote">
+            "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते"
+        </blockquote>
+        <p class="philosophy-translation">"Nothing is as purifying as knowledge."</p>
+        <p class="philosophy-attribution">— Bhagavad Gita, 4.38</p>
+    </section>
+
+    <!-- Social Proof Metrics Row -->
+    <section class="metrics-section">
+        <div class="metrics-grid">
+            <div class="metric-column">
+                <div class="metric-number">5</div>
+                <div class="metric-label">modules</div>
+            </div>
+            <div class="metric-column">
+                <div class="metric-number">3</div>
+                <div class="metric-label">AI models</div>
+            </div>
+            <div class="metric-column">
+                <div class="metric-number">&lt;50ms</div>
+                <div class="metric-label">inference</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Footer Band -->
+    <div class="cta-footer-band">
+        <h2>Start living in rhythm.</h2>
+        <button class="accent-button" onclick="window.location.href='onboarding.html'">Create Your Profile →</button>
+        <p class="cta-subtext">Free tier available. No card required.</p>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="footer-logo">KEDAR</span>
+                <p class="footer-tagline">Your AI-powered Holistic Operating System for Daily Life</p>
+            </div>
+            <div class="footer-center">
+                <a href="#modules" class="footer-link">Modules</a>
+                <a href="#ai" class="footer-link">AI</a>
+                <a href="#rhythm" class="footer-link">Rhythm</a>
+                <a href="pricing.html" class="footer-link">Pricing</a>
+            </div>
+            <div class="footer-right">
+                <a href="#privacy" class="footer-link">Privacy</a>
+                <a href="#terms" class="footer-link">Terms</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 KEDAR · Not medical advice</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

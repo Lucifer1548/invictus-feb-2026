@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitta - Mental & Emotional Tracking | KEDAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="chitta.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">KEDAR</span>
+                <div class="user-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23d4a853'/%3E%3Ctext x='20' y='25' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='14' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E"
+                        alt="User Avatar">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a href="chitta.html" class="nav-item active">
+                    <span class="nav-icon">🧠</span>
+                    Chitta
+                </a>
+                <a href="dinacharya.html" class="nav-item">
+                    <span class="nav-icon">⏰</span>
+                    Dinacharya
+                </a>
+                <a href="yoga.html" class="nav-item">
+                    <span class="nav-icon">🧘</span>
+                    Yoga
+                </a>
+                <a href="netra.html" class="nav-item">
+                    <span class="nav-icon">👁️</span>
+                    Netra
+                </a>
+                <a href="dharma.html" class="nav-item">
+                    <span class="nav-icon">☯️</span>
+                    Dharma
+                </a>
+                <a href="ayur.html" class="nav-item">
+                    <span class="nav-icon">🌿</span>
+                    Ayur
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="burnout-widget">
+                    <div class="burnout-gauge">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#222" stroke-width="4" />
+                            <circle cx="30" cy="30" r="25" fill="none" stroke="#d4a853" stroke-width="4"
+                                stroke-dasharray="157" stroke-dashoffset="47" transform="rotate(-90 30 30)" />
+                        </svg>
+                        <div class="burnout-score">72</div>
+                    </div>
+                    <div class="burnout-label">Burnout Risk</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content chitta-main">
+            <!-- Header Bar -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Chitta</h1>
+                    <span class="page-subtitle">Mental & Emotional Tracking</span>
+                </div>
+                <div class="header-right">
+                    <div class="live-time" id="liveTime"></div>
+                    <button class="notification-bell">🔔</button>
+                    <div class="profile-menu">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23d4a853'/%3E%3Ctext x='16' y='20' text-anchor='middle' fill='%230a0a0a' font-family='monospace' font-size='12' font-weight='bold'%3EAV%3C/text%3E%3C/svg%3E"
+                            alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <section class="chitta-dashboard-split">
+                <!-- Left Column: Mood Logger & Pulse -->
+                <div class="chitta-col-left">
+                    <div class="chitta-panel">
+                        <div class="panel-header">
+                            <h2>Emotional State Logger</h2>
+                            <div class="panel-index">[CHT-LOG]</div>
+                        </div>
+                        <div class="mood-selector">
+                            <p>How is your internal weather right now?</p>
+                            <div class="mood-grid">
+                                <button class="mood-btn vata" data-mood="anxious">🌪️ Anxious/Scattered (Vata)</button>
+                                <button class="mood-btn pitta" data-mood="frustrated">🔥 Frustrated/Intense
+                                    (Pitta)</button>
+                                <button class="mood-btn kapha" data-mood="lethargic">☁️ Lethargic/Heavy (Kapha)</button>
+                                <button class="mood-btn sattva" data-mood="balanced">✨ Balanced/Clear (Sattva)</button>
+                            </div>
+                            <textarea class="mood-note"
+                                placeholder="Add a brief note about what's occupying your mind..."></textarea>
+                            <button class="save-mood-btn accent-button">Log State</button>
+                        </div>
+                    </div>
+
+                    <div class="chitta-panel">
+                        <div class="panel-header">
+                            <h2>Recent Mental States</h2>
+                            <div class="panel-index">[CHT-HIST]</div>
+                        </div>
+                        <ul class="mood-history-list">
+                            <li>
+                                <span class="time">10:00 AM</span>
+                                <span class="mood pitta">🔥 Frustrated/Intense</span>
+                                <span class="note">Back-to-back meetings without breaks.</span>
+                            </li>
+                            <li>
+                                <span class="time">08:30 AM</span>
+                                <span class="mood sattva">✨ Balanced/Clear</span>
+                                <span class="note">Completed morning meditation.</span>
+                            </li>
+                            <li>
+                                <span class="time">Yesterday, 4:00 PM</span>
+                                <span class="mood vata">🌪️ Anxious/Scattered</span>
+                                <span class="note">Too many tabs open, context switching.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column: Burnout Analysis -->
+                <div class="chitta-col-right">
+                    <div class="chitta-panel advanced-burnout">
+                        <div class="panel-header">
+                            <h2>Burnout Predictor Analysis</h2>
+                            <div class="panel-index">[CHT-PREDICT]</div>
+                        </div>
+
+                        <div class="burnout-chart-expanded">
+                            <canvas id="chittaBurnoutChart" width="100%" height="250"></canvas>
+                        </div>
+
+                        <div class="risk-breakdown">
+                            <h3>Key Contributors to Burnout</h3>
+                            <div class="risk-factors">
+                                <div class="factor-item">
+                                    <span class="factor-label">Sleep Debt</span>
+                                    <div class="factor-bar">
+                                        <div class="factor-fill" style="width: 80%; background: var(--dosha-vata);">
+                                        </div>
+                                    </div>
+                                    <span class="factor-value">High</span>
+                                </div>
+                                <div class="factor-item">
+                                    <span class="factor-label">Cognitive Load</span>
+                                    <div class="factor-bar">
+                                        <div class="factor-fill" style="width: 90%; background: var(--dosha-pitta);">
+                                        </div>
+                                    </div>
+                                    <span class="factor-value">Critical</span>
+                                </div>
+                                <div class="factor-item">
+                                    <span class="factor-label">Physical Inactivity</span>
+                                    <div class="factor-bar">
+                                        <div class="factor-fill" style="width: 40%; background: var(--dosha-kapha);">
+                                        </div>
+                                    </div>
+                                    <span class="factor-value">Moderate</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chitta-recommendation">
+                            <h3>Instant Correction Protocol</h3>
+                            <p>You are exhibiting strong Pitta-aggravation with Vata scattering.
+                                <strong>Recommendation:</strong> Step away from the screen for 10 minutes. Wash your
+                                face with cool water. Practice 5 rounds of Shitali Pranayama (cooling breath).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="chitta.js"></script>
+</body>
+
+</html>
